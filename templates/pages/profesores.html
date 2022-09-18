@@ -1,0 +1,63 @@
+{% extends "index.html" %}
+
+{% block titulo %}  Profesores {% endblock %}
+
+{% load static %}
+
+{% block css %} <link rel="stylesheet" href="{% static 'css/formulario.css'  %}"> {% endblock %}  
+
+{% block contenido %}
+
+    <section class="form-container">
+      <div class="form-header">
+        <h2> Formulario de Profesores </h2>
+      </div>
+      <form method="POST" id="user-form" class="form">
+        {% csrf_token %}
+        
+        <button
+          id="enviar"
+          type="submit"
+          name="enviar"> 
+          <a href="{% url 'agregarprofesores' %}">
+          {{accion}}
+          </a>
+        </button>
+        
+      </form>
+       <div class="consulta none table-responsive" id="consulta">
+            <h3>Listado de Profesores</h3>
+          <table class="consulta-est" id="consulta-est" border="1">
+            
+            <thead>
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Cédula</th>
+                <th>Materias</th>
+                <th>Sueldo</th>
+                <th>Estado</th>
+                <th>Opciones</th>
+                
+              </thead>
+              <tbody class="detalle-est" id="detalle-est">
+                {% for empleado in empleados %}
+                <tr>
+                    <td>{{empleado.id}}</td>
+                    <td>{{empleado.nombre}}</td>
+                    <td>{{empleado.cedula}}</td>
+                    <td>{{empleado.materia}}</td>
+
+                    <td>${{empleado.sueldo}}</td>
+                    <td>{{empleado.estado}}</td>
+                    <td>
+                        <a href="{% url 'editarprofesores' empleado.id %}">✍️</a>
+                        <a href="{% url 'eliminarprofesores' empleado.id %}">❌️</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+          </table>
+       </div>    
+    </section>
+{% endblock %}

@@ -1,0 +1,86 @@
+/* selector principal en css */
+/** creacion de varibles globales*/
+:root {
+    --primary-color:#1C2833  ;
+    --secundary-color: #9c000e;
+    --boton-success:#81f0b2;
+    --boton-secundary:#3b3a3a;
+    --boton-warning:#fe9a2a;
+    --boton-cancelar:#fe4093;
+    --font-size:16px;
+    --font-color:#000;
+    --font-color-reverse:#ece1e1;
+}
+  /** reseteo de estilos */
+html {
+    box-sizing: border-box; /** no afecte al tamaño de la caja */
+    font-size: var(--font-size);
+    scroll-behavior: smooth; /** aplica una transiccion no subita eal cambiar de seccion */
+    color:var(--font-color);
+}
+  /** todos los elementos hereden el box-sizing: */
+*,*:before,*:after{
+    box-sizing: inherit;
+}
+  body{
+    background-color: #330055;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23330055' cx='50' cy='0' r='50'/%3E%3Cg fill='%233a015d' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23410165' cx='50' cy='100' r='50'/%3E%3Cg fill='%2348026e' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23500376' cx='50' cy='200' r='50'/%3E%3Cg fill='%2357047e' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%235f0587' cx='50' cy='300' r='50'/%3E%3Cg fill='%2367068f' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%236f0798' cx='50' cy='400' r='50'/%3E%3Cg fill='%237707a0' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%238008a9' cx='50' cy='500' r='50'/%3E%3Cg fill='%238909b1' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%239109ba' cx='50' cy='600' r='50'/%3E%3Cg fill='%239a09c3' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23a309cb' cx='50' cy='700' r='50'/%3E%3Cg fill='%23ad09d4' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23b608dc' cx='50' cy='800' r='50'/%3E%3Cg fill='%23c007e5' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23c905ee' cx='50' cy='900' r='50'/%3E%3Cg fill='%23d303f6' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23D0F' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: contain;
+  }
+  main{
+    margin:0 10px;
+    margin-top: 70px;
+  }
+  img{
+    max-width: 100%;/** las imagenes se adaptan a la maxima anchura de su contenedor */
+    height: auto;
+  }
+  a{
+    text-decoration: none;
+  }
+  li{
+    list-style:none;
+  }
+  .bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, rgb(222, 231, 144) 50%, rgb(146, 250, 227) 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:2s;
+  }
+
+  .bg3 {
+    animation-duration:5s;
+  }
+
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
+
+  hr{
+    margin:20px;
+  }
+  footer{
+    background: black;
+    color:white;
+    text-align: center;
+    margin-right: 2%;
+    margin-left: 3%;
+    line-height: 25px;
+
+}
